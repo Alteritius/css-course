@@ -4,5 +4,6 @@ This repo consists of projects and tasks described in the CSS Course I've taken 
 
 ## Credits
 
-Author: Samuraj Programowania
+Course's author: Samuraj Programowania
+
 Course link: [Front-end średniozaawansowany w 15 intensywnych dni!](https://www.udemy.com/course/front-end-zaawansowany/)
