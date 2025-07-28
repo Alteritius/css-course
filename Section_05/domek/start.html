@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Domek</title>
+    <style>
+        span {
+            display: flex;
+            height: 50px;
+            width: 100px;
+            /* top: 25%;
+            left: 25%; */
+            transform: translate(100px, 100px);
+            /* text-align: center center; */
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+            background-color: crimson;
+            color: white;
+            cursor: pointer;
+
+        }
+
+        span:hover {
+            background-color: aqua;
+        }
+
+        .house,
+        .roof,
+        .chimney,
+        .window1,
+        .window2,
+        .door {
+            top: 70%;
+            left: 15%;
+            width: 0;
+            height: 0;
+            transition: 0.5s linear 0.1s;
+        }
+
+        span:hover ~.house {
+            height: 300px;
+            width: 500px;
+            background-color: crimson;
+            position: absolute;
+            top: 70%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(360deg);
+            z-index: 3;
+
+
+        }
+
+        span:hover ~.roof {
+            height: 354px;
+            width: 354px;
+            background-color: black;
+            position: absolute;
+            top: 70%;
+            left: 50%;
+            transform: translate(-50%, calc(-50% - 150px)) rotate(405deg);
+            z-index: 2;
+        }
+
+        span:hover ~.chimney {
+            height: 80px;
+            width: 40px;
+            background-color: gray;
+            position: absolute;
+            top: 70%;
+            left: 50%;
+            transform: translate(calc(-50% + 90px), calc(-50% - 300px)) rotate(360deg);
+            z-index: 1;
+        }
+
+        span:hover ~.window1 {
+            height: 90px;
+            width: 70px;
+            background-color: yellow;
+            position: absolute;
+            top: 70%;
+            left: 50%;
+            transform: translate(calc(-50% - 150px), calc(-50% - 70px)) rotate(360deg);
+            z-index: 4;
+        }
+
+        span:hover ~.window2 {
+            height: 90px;
+            width: 100px;
+            background-color: yellow;
+            position: absolute;
+            top: 70%;
+            left: 50%;
+            transform: translate(calc(-50% + 150px), calc(-50% - 70px)) rotate(360deg);
+            z-index: 4;
+        }
+
+        span:hover ~.door {
+            height: 120px;
+            width: 80px;
+            background-color: gray;
+            position: absolute;
+            top: 70%;
+            left: 50%;
+            transform: translate(calc(-50% ), calc(-50% + calc(150px - 60px) )) rotate(360deg);
+            z-index: 4;
+        }
+
+
+    </style>
+
+</head>
+
+<body>
+    <span>BUDUJEMY</span>
+    <div class="house"></div>
+    <div class="roof"></div>
+    <div class="chimney"></div>
+    <div class="window1"></div>
+    <div class="window2"></div>
+    <div class="door"></div>
+</body>
+
+</html>

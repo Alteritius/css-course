@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <title>Document</title>
+ <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+  crossorigin="anonymous">
+
+ <style>
+    .arrow {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border-style: none;
+        background-color: royalblue;
+        color: white;
+        /* color: black; */
+        font-size: 30px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        overflow: hidden;
+        transition: 0.2s;
+        cursor: pointer;
+        
+    }
+
+    /* .arrow:hover {
+        box-shadow: 0 0 3px 3px royalblue;
+    } */
+
+    .arrow i{ 
+        position: absolute;
+        /* top: calc(50% - 50px);
+        left: 50%;
+        transform: translate(-50%, 0); */
+        text-shadow: 0 -15px 0 white, 0 -30px 0 white;
+        animation: scroll 2s linear infinite both;
+    }
+
+    .arrow:hover i {
+        animation-duration: 1s;
+    }
+
+    @keyframes scroll {
+        0% {
+            top: calc(50% - 50px);
+            left: 50%;
+            transform: translate(-50%, 0);
+        }
+
+        100% {
+            top: calc(50% + 75px);
+            left: 50%;
+            transform: translate(-50%, 0);
+        }
+    }
+ </style>
+</head>
+
+<body>
+
+ <button class="arrow">
+  <i class="fas fa-angle-down"></i>
+
+ </button>
+</body>
+
+</html>

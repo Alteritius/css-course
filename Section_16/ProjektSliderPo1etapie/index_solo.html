@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider</title>
+    <link href="https://fonts.googleapis.com/css?family=Oswald&amp;subset=latin-ext" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+
+        }
+
+        html {
+            font-family: Oswald;
+            font-size: 10px;
+
+        }
+
+        .team {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            background-color: #ccc;
+            position: relative;
+        }
+
+        .team img.color {
+            position: absolute;
+            bottom: 0;
+            right: -5%;
+            height: 36%;
+            z-index: 1;
+            animation: color 4s linear infinite both;
+            opacity: 0;
+        }
+
+        .team img.gray {
+            position: absolute;
+            bottom: 0;
+            left: -70%;
+            height: 110%;
+            /* opacity: 0.2; */
+            animation: grayy 4s linear infinite both;
+            opacity: 0;
+        }
+
+        .team .member {
+            position: absolute;
+            top: 10%;
+            left: 0;
+            text-align: center;
+            width: 100%;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            animation: text 4s linear infinite both;
+            opacity: 0;
+
+        }
+
+        .team h1 {
+            font-size: 4rem;
+        }
+
+        .team h2 {
+            font-size: 2.6rem;
+        }
+
+        @media (orientation: landscape) {
+            .team img.color {
+
+            right: 3%;
+            height: 46%;
+        }
+
+        .team img.gray {
+            bottom: -10%;
+            left: -15%;
+            height: 130%;
+        }
+
+        .team .member {
+            left: auto;
+            right: 0;
+            width: 60%;
+            
+
+        }
+        }
+
+        @media (min-height: 1025px) {
+            .team h1{
+                font-size: 8rem;
+        }
+            .team h2{
+               font-size: 5rem; 
+        }
+        }
+        @keyframes color {
+            0% {
+                transform: translateX(0);
+                opacity: 0;
+            }
+
+            8% {
+                opacity: 0;
+            }
+            13% {
+                opacity: 1; 
+            }
+
+            87% {
+                opacity: 1;
+            }
+
+            92% {
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(-5%);
+                opacity: 0;
+            }
+        }
+
+        @keyframes grayy {
+            0% {
+                transform: translateX(0) scale(1);
+                opacity: 0;
+            }
+
+            8% {
+                opacity: 0;
+            }
+            13% {
+                opacity: 0.2; 
+            }
+
+            87% {
+                opacity: 0.2;
+            }
+
+            92% {
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(5%) scale(1.1);
+                opacity: 0;
+            }
+        }
+
+        @keyframes text {
+            0% {
+                transform: scale(1);
+                opacity: 0;
+            }
+
+            8% {
+                opacity: 0;
+            }
+            13% {
+                opacity: 1; 
+            }
+
+            87% {
+                opacity: 1;
+            }
+
+            92% {
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1.1);
+                opacity: 0;
+            }
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <section class="team">
+        <img src="img/s1.png" alt="dziewczyna 1 kolor" class="color">
+        <img src="img/s1a.png" alt="dziewczyna 1 szara" class="gray">
+        <div class="member">
+            <h1>Anna Baugart</h1>
+            <h2>Programistka JS</h2>
+        </div>
+    </section>
+    
+    <script>
+
+        let activeElement = 0;
+        let timeChange = 4000;
+
+        const colorImgHtml = document.querySelector('.color');
+        const grayImgHtml = document.querySelector('.gray');
+        const h1Html = document.querySelector('.member h1');
+        const h2Html = document.querySelector('.member h2');
+
+
+        const colorImages = ['img/s1.png','img/s2.png','img/s3.png'];
+        const grayImages = ['img/s1a.png','img/s2a.png','img/s3a.png'];
+        const names = ['Anna Baugart', 'Marek Feliksiak', 'Arek Pawłowicz'];
+        const professions = ['Programistka JS', 'UX i UI Designer', 'Front-End Developer'];
+
+        function changeElement() {
+            if(activeElement < colorImages.length - 1) {
+                activeElement++;
+            }
+            else {
+                activeElement = 0;
+            }
+            
+            colorImgHtml.src = colorImages[activeElement];
+            grayImgHtml.src = grayImages[activeElement];
+            h1Html.textContent = names[activeElement];
+            h2Html.textContent = professions[activeElement];
+
+        }
+
+        setInterval(changeElement, timeChange);
+        
+    </script>
+</body>
+</html>

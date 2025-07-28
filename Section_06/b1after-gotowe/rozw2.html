@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        button {
+            position: absolute;
+            height: 60px;
+            width: 100px;
+            background-color: #ddd;
+            font-size: 20px;
+
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            overflow: hidden;
+            
+        }
+
+        button::before {
+            content: "";
+            position: absolute;
+            background-color: black;
+            height: 3px;
+            width: 80%;
+            left: -100%;
+            bottom: 0;
+            transition: .7s cubic-bezier(0, 1.8, 1, 1);
+        }
+
+        button:hover::before {
+            left: 10%;
+        }
+
+        /* span {
+            position: absolute;
+            background-color: black;
+            height: 3px;
+            width: 80%;
+            left: -100%;
+            bottom: 0;
+            transition: 0.3s;
+        }
+
+        button:hover span {
+            left: 10%;
+        } */
+
+    </style>
+</head>
+<body>
+    <button>Przycisk<span></span></button>
+</body>
+</html>

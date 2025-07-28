@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        :root {
+            --h1FontSize: 40px;
+        }
+        button {
+            font-size: 40px;
+        }
+
+        h1 {
+            font-family: arial;
+            font-size: 80px;
+            position: absolute;
+            font-size: var(--h1FontSize);
+            border: 0 solid black;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: 0.3s linear 0.1s;
+            /* overflow:hidden; */
+        }
+
+        .larger:hover~h1 {
+            font-size: calc(var(--h1FontSize) * 2);
+        }
+
+        .smaller:hover~h1 {
+            font-size: calc(var(--h1FontSize) / 2);
+        }
+
+        .border:hover~h1 {
+            border: 30px solid black;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <button class="larger">2xWiększy</button>
+    <button class="smaller">2xMniejszy</button>
+    <button class="border">Obramowanie</button>
+    <h1>Nazwa</h1>
+
+
+</body>
+
+</html>
